@@ -13,7 +13,7 @@ app.use(bodyParser.json())
 
 
 app.get('/login/:username/:password', function (req, res) {
-      MongoClient.connect('mongodb+srv://root:xxx123@soldanimirco-tpwn0.mongodb.net/test?retryWrites=true&w=majority', function(err, db) {
+      MongoClient.connect('mongodb+srv://root:ROOT@beatricemilan-qkxrr.mongodb.net/test?retryWrites=true&w=majority', function(err, db) {
       if (err) {
         throw err;
       }
@@ -39,7 +39,7 @@ app.get('/login/:username/:password', function (req, res) {
 });
 
 app.post('/registrazione', function (req, res) {
-            MongoClient.connect('mongodb+srv://root:xxx123@soldanimirco-tpwn0.mongodb.net/test?retryWrites=true&w=majority', function(err, db) {
+            MongoClient.connect('mongodb+srv://root:ROOT@beatricemilan-qkxrr.mongodb.net/test?retryWrites=true&w=majority', function(err, db) {
               if (err) {throw err;}
               var dbo = db.db("MonoOfficine");
               var newRist = {username: req.body.username, password: req.body.password};
@@ -60,7 +60,7 @@ app.post('/registrazione', function (req, res) {
 });
 
 app.get('/coordinate', function (req, res) {
-      MongoClient.connect('mongodb+srv://root:xxx123@soldanimirco-tpwn0.mongodb.net/test?retryWrites=true&w=majority', function(err, db) {
+      MongoClient.connect('mongodb+srv://root:ROOT@beatricemilan-qkxrr.mongodb.net/test?retryWrites=true&w=majority', function(err, db) {
       if (err) {throw err;}
       var dbo = db.db("MonoOfficine");
       dbo.collection("Monopattini").find().toArray(function(err, result) {
@@ -76,7 +76,7 @@ app.get('/coordinate', function (req, res) {
 
 
 app.post('/noleggio', function (req, res) {
-    MongoClient.connect('mongodb+srv://root:xxx123@soldanimirco-tpwn0.mongodb.net/test?retryWrites=true&w=majority', function(err, db) {
+    MongoClient.connect('mongodb+srv://root:ROOT@beatricemilan-qkxrr.mongodb.net/test?retryWrites=true&w=majority', function(err, db) {
         if (err) {throw err;}
             var dbo = db.db("MonoOfficine");
             var newRist = {username:req.body.User, idMonopattino: req.body.idMonopattino, dataInizio: req.body.dataIn, oraInizio: req.body.oraIn , dataFine:req.body.dataFi, oraFine:req.body.oraFi};
@@ -89,7 +89,7 @@ app.post('/noleggio', function (req, res) {
 });
 
 app.post('/guasto', function (req, res) {
-    MongoClient.connect('mongodb+srv://root:xxx123@soldanimirco-tpwn0.mongodb.net/test?retryWrites=true&w=majority', function(err, db) {
+    MongoClient.connect('mongodb+srv://root:ROOT@beatricemilan-qkxrr.mongodb.net/test?retryWrites=true&w=majority', function(err, db) {
         if (err) {throw err;}
             var dbo = db.db("MonoOfficine");
             var newRist = {idMonopattino:req.body.idMonopattino, problema: req.body.problema, idUser: req.body.idUser , DataSegn:req.body.DataSegn, OraSegn:req.body.OraSegn};
